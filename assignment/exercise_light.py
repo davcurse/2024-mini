@@ -14,8 +14,9 @@ adc = machine.ADC(ADC2)
 
 blink_period = 0.1
 
-max_bright = 20000
-min_bright = 10000
+# New values of max and min brightness. Print duty cycle to get normalized 0%-100% brightness 
+max_bright = 500
+min_bright = 52000
 
 
 def clip(value: float) -> float:
@@ -29,7 +30,8 @@ def clip(value: float) -> float:
 
 while True:
     value = adc.read_u16()
-    print(value)
+    # print(value)
+    print(duty_cycle * 100)
     """
     need to clip duty cycle to range [0, 1]
     this equation will give values outside the range [0, 1]
