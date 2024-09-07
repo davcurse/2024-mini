@@ -27,6 +27,7 @@ def clip(value: float) -> float:
         return 1
     return value
 
+duty_cycle = 0
 
 while True:
     value = adc.read_u16()
