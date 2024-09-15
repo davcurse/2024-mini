@@ -6,9 +6,19 @@ from machine import Pin
 import time
 import random
 import json
+import urequests
+import network
 
+import os
 
-N: int = 10
+wlan = network.WLAN(network.STA_IF)
+if not wlan.active() or not wlan.isconnected():
+    wlan.active(True)
+    wlan.connect("BU Guest (unencrypted)", "")
+    while not wlan.isconnected():
+        pass
+
+N: int = 1
 sample_ms = 10.0
 on_ms = 500
 
@@ -49,39 +59,29 @@ def scorer(t: list[int | None]) -> None:
     # %% collate results
     misses = t.count(None)
     print(f"You missed the light {misses} / {len(t)} times")
-
     t_good = [x for x in t if x is not None]
-
     print(t_good)
-
-    # add key, value to this dict to store the minimum, maximum, average response time
-    # and score (non-misses / total flashes) i.e. the score a floating point number
-    # is in range [0..1]
     
     if not t_good:
         average =  0
-    average = sum(t_good) / len(t_good)
-    minimum = min(t_good)
-    maximum = max(t_good)
+        minimum = 0
+        maximum = 0
+        score = 0
+    else:
+        average = sum(t_good) / len(t_good)
+        minimum = min(t_good)
+        maximum = max(t_good)
+        score = len(t_good)/len(t)
 
     data = {
         "avg_ms" : average,
         "min" : minimum,
-        "max" : maximum
+        "max" : maximum,
+        "score": score
     }
 
     print(data)
-
-    # %% make dynamic filename and write JSON
-
-    now: tuple[int] = time.localtime()
-
-    now_str = "-".join(map(str, now[:3])) + "T" + "_".join(map(str, now[3:6]))
-    filename = f"score-{now_str}.json"
-
-    print("write", filename)
-
-    write_json(filename, data)
+    urequests.post(f"https://ec463-mini-project-10f0f-default-rtdb.firebaseio.com/ {user_id} /json", data=json.dumps(data))
 
 
 if __name__ == "__main__":
