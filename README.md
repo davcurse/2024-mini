@@ -23,8 +23,11 @@ Other IDE can be used, including Visual Studio Code or
 * [Photoresistor](./doc/photocell.md) and 10k ohm resistor
 * 2 [tactile switches](https://sten-eswitch-13110800-production.s3.amazonaws.com/system/asset/product_line/data_sheet/184/TL59-TL58.pdf)
 
-
 ## Reference
 
 * [Pico WH pinout diagram](https://datasheets.raspberrypi.com/picow/PicoW-A4-Pinout.pdf) shows the connections to analog and digital IO.
 * Getting Started with Pi Pico [book](https://datasheets.raspberrypi.com/pico/getting-started-with-pico.pdf)
+
+## Cloud Upload Data
+
+![1726434145453](image/README/1726434145453.png)
