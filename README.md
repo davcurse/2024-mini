@@ -29,5 +29,6 @@ Other IDE can be used, including Visual Studio Code or
 * Getting Started with Pi Pico [book](https://datasheets.raspberrypi.com/pico/getting-started-with-pico.pdf)
 
 ## Cloud Upload Data
-For this part we used Firebase to collect the avg, 
+For this part we used Firebase to collect the avg, max, min, and the score in total per round of playing the game. This can be seen here in this picture below as we collected data for playing the game for 3 rounds.
+
 ![1726434145453](image/README/1726434145453.png)
