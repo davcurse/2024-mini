@@ -9,3 +9,11 @@ The exercise_game.py script measures response time.
 2. Upload the response time data to a cloud service of your choice.
 
 The response to these questions is your unique code and results in Report.md in your team's forked GitHub repository.
+
+## Methods and Results
+
+After importing the urequests and network libraries in lines 9 and 10, the Raspberry Pi can connect to Firebase through these
+libraries, it does that specificly at the added command:
+urequests.post("https://ec463-mini-project-10f0f-default-rtdb.firebaseio.com/data.json", data=json.dumps(data))
+This command was added at line .. of the code file exercise_game.py
+This setup allows us to store the data we collect after each successful run of the code.
