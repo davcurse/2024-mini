@@ -16,6 +16,4 @@ After importing the urequests and network libraries in lines 9 and 10, the Raspb
 libraries, it does that specificly at the added command:
 urequests.post("https://ec463-mini-project-10f0f-default-rtdb.firebaseio.com/data.json", data=json.dumps(data))
 
-This command was added at line 69 of the code file exercise_game.py
-
-This setup allows us to store the data we collect after each successful run of the code.
+This command was added at line 69 of the code file exercise_game.py which does minimum, maximum, average response time and score of non-misses flashes. This setup allows us to store the data we collect after each successful run of the code.
