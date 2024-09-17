@@ -36,4 +36,23 @@ nokia_ringtone = [
 
 ### Exercise 3
 
-< To be completed >
+Completed button game.
+
+Connected raspberry pi pico to the internet via network library:
+
+```
+wlan = network.WLAN(network.STA_IF)
+if not wlan.active() or not wlan.isconnected():
+    wlan.active(True)
+    wlan.connect("BU Guest (unencrypted)", "")
+    while not wlan.isconnected(): 
+        pass
+```
+
+Sent button game results to firebase cloud via urequests library:
+
+```
+urequests.post("https://ec463-mini-project-10f0f-default-rtdb.firebaseio.com/data.json", data=json.dumps(data))
+```
+
+Screenshot of firebase cloud with data is seen in top level readme file.
