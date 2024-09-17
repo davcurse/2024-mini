@@ -28,3 +28,11 @@ Experiment using exercise_light.py to find approximate max_bright and min_bright
 
 Pico MicroPython time.sleep() doesn't error for negative values even though such are obviously incorrect--it is undefined for a system to sleep for negative time.
 Duty cycle greater than 1 is undefined, so we clip the duty cycle to the range [0, 1].
+
+## Methods and Results
+
+Physical setup for microcontroller:
+The light sensor was connected to pin GP28, with a resistor also connected to GP28 and a 3V3 supply. The provided code was
+executed, and the behavior of the light sensor was tested using a flashlight, which caused the duty cycle of the LED to
+approach 100%. Also to achieve a lower duty cycle, we covered the sensor and observed a decrease in the values.
+
