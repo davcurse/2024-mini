@@ -18,4 +18,9 @@ For the question below, feel free to use musical scale of your choice!
 
 ## Questions
 
-1. Using the code in exercise_sound.py as a starting point, modify the code to play several notes in a sequence from a song of your choosing.
+1. Using the code in exercise_sound.py as a starting point, modify the code to play several notes in a sequence from a song of your choosing. (Find answer in the next section -Methods and Results)
+
+## Methods and Results
+
+We added the Nokia ringtone to be use in the speaker at pin GP16 this was added between lines 39 and 44.
+We also changed the pausing time so that the code pauses the execution for 0.01 seconds then prints Finished!
